@@ -19332,7 +19332,7 @@ a.card:focus, a.card:hover {
 }
 
 .accordion>.card {
-	margin-bottom: 15px
+	margin-bottom: 12px
 }
 
 .accordion>.card>.card-header {
