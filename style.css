@@ -13916,7 +13916,11 @@ h5 {
 }
 
 h6 {
+<<<<<<< HEAD
 	font-size: 12px
+=======
+	font-size: 14px
+>>>>>>> 0eb1e8d7aced8bb95efad0cc85eddcccff023a0a
 }
 
 p {
@@ -19332,7 +19336,7 @@ a.card:focus, a.card:hover {
 }
 
 .accordion>.card {
-	margin-bottom: 15px
+	margin: 12px
 }
 
 .accordion>.card>.card-header {
