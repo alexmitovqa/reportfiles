@@ -21526,6 +21526,6 @@ function getRandomColor() {
 
 $(document).ready(function(){
 	$(".expandTable").click(function () {
-		$(".hide").toggle();
+    $(this).nextUntil(".runtime-table table-striped table").toggle();
 	});
 });
