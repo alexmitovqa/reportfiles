@@ -21525,7 +21525,7 @@ function getRandomColor() {
 })();
 
 $(document).ready(function(){
-	$(".expandFRED").click(function () {
+	$(".expandTable").click(function () {
 		$(".hide").toggle();
 	});
 });
