@@ -21132,16 +21132,25 @@ $(document).ready(function () {
   $(".spa .side-nav .nav-item>a").attr("href", "#");
 });
 
-$(".test-content").click(function (evt) {
+$(".test-content").on("click", function (evt) {
   var target = $(evt.target);
-  if (target.is(".card-header")) {
-    target.next().toggleClass("collapse");
+
+  if (!target.is(".btn") && target.parents(".level-0", ".level-1").length && target.is(".node,.node-text,.card-title")){
+    $(".level-1 > .collapse.show").collapse("hide");
+    $(".btn + .collapse.show").collapse("hide");
+
+    if(!target.parents(".level-1").length){
+      $(".collapse.show").collapse("hide");
+    }
   }
-  if (target.is(".node,.collapsed,.card-title")) {
-    target.closest(".card-header").next().toggleClass("collapse");
+
+  if (target.is(".node,.node-text,.card-title")) {
+    target.closest(".card-header").next().collapse("toggle");
   }
-  if (target.is("textarea") && !target.hasClass("maxxed")) {
-    target.addClass("maxxed").height(target.prop("scrollHeight") + "px");
+
+  if (target.is(".btn.log")) {
+    $(".btn + .collapse.show").collapse("hide");
+    target.next().collapse("toggle");
   }
 
   /* -- [ category view, status filters ] -- */
