@@ -21118,14 +21118,7 @@ $(".test-item").click(function () {
 });
 
 $(document).ready(function () {
-  if ($(".test-item").length) {
-    $(".test-item").get(0).click();
-  }
-
-  // SPA only: hide all views except test on document load
-  $(".spa .dashboard-view,.spa .tag-view,.spa .exception-view").addClass(
-    "d-none"
-  );
+  $("#nav-dashboard").on("click");
 
   // remove links for spa page
   // this prevents invalid navigation to external html files
@@ -21209,16 +21202,13 @@ $("#tag-toggle>a").click(function () {
 /* ------------------------------------ */
 /* SPA side-nav */
 /* ------------------------------------ */
-var currentView = "tests-view";
-function toggleView(v) {
-  if ($(".spa").length && v !== currentView) {
-    $(".main-content>*").addClass("d-none");
-    $("." + v).removeClass("d-none");
-    $("." + v + " .test-item:not(.d-none)")
-      .first()
-      .click();
+function toggleView(view) {
+  $(".main-content > ." + view).removeClass("d-none");
+  $(".main-content > " + ":not(." + view +")").addClass("d-none");
+
+  if (view == 'test-view' && $(".test-list-item").length){
+    $(".test-item").first().click();
   }
-  currentView = v;
 }
 
 /* ------------------------------------ */
