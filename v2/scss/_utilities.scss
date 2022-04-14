@@ -1,0 +1,19 @@
+/* Utilities Start*/
+.pull-up{
+    -webkit-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    transition: all .25s ease;
+}
+
+.pull-up:hover {
+    -webkit-transform: translateY(-4px) scale(1.02);
+    -moz-transform: translateY(-4px) scale(1.02);
+    -ms-transform: translateY(-4px) scale(1.02);
+    -o-transform: translateY(-4px) scale(1.02);
+    transform: translateY(-4px) scale(1.02);
+    -webkit-box-shadow: 0 5px 10px rgba(62,57,107,.2);
+    box-shadow: rgba(100, 100, 111, 0.342) 0px 7px 29px 0px;
+    z-index: 999;
+}
+/* Utilities End*/

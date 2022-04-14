@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation Tests Report v2</title>
+    <link rel="icon" type="image/x-icon" href="img/brain-icon.png">
+    <link rel="stylesheet" href="/v2/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css">
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="js/apexcharts.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            
+        </div>
+    </header>
+    <!-- Sidebar Start -->
+    <nav>
+        <div class="sidebar">
+            <div class="side-nav-logo">
+                <img src="img/brain-icon.png"><span class="smart">Smart</span><span class="it">IT</span>
+            </div>
+            <li>
+                <ul class="dashboard" onclick="toggleView('dashboard-view')">
+                    <a href="#"><i class="fa fa-gauge"></i><span>Dashboard</span>
+                    </a>
+                    <div class="before"></div>
+                    <div class="after"></div>
+                </ul>
+                <ul class="tests" onclick="toggleView('test-view')">
+                    <a href="#"><i class="fa fa-flask"></i><span>Tests</span></a>
+                    <div class="before"></div>
+                    <div class="after"></div>
+                </ul>
+                <ul class="bugs" onclick="toggleView('bugs-view')">
+                    <a href="#"><i class="fa fa-bug"></i><span>Bugs</span>
+                    </a>
+                    <div class="before"></div>
+                    <div class="after"></div>
+                </ul>
+            </li>
+        </div>
+    </nav>
+    <!-- Sidebar End -->
+    <!-- Main Content Start -->
+    <main>
+        <div class="main-content">
+            <div class="container p-4 dashboard-view d-none">
+                <div class="main-title"><span>Dashboard</span></div>
+                <!-- Environment info -->
+                <div class="row test-environment">
+                    <div class="col-sm-4 mb-4">
+                        <div class="card pull-up">
+                            <div class="card-header">
+                                <span>Test Environment</span>
+                            </div>
+                            <div class="card-body">
+                                <p><i class="fa fa-server"></i> 20210803100000222</p>
+                                <p><i class="fa fa-desktop"></i> Kubernetes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-4">
+                        <div class="card pull-up">
+                            <div class="card-header">
+                                Deployment
+                            </div>
+                            <div class="card-body">
+                                <p><i class="fa fa-code-branch"></i>DEV</p>
+                                <p><i class="fa fa-up-right-from-square"></i><a href="#">123455</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-4">
+                        <div class="card pull-up">
+                            <div class="card-header">
+                                Run
+                            </div>
+                            <div class="card-body">
+                                <p><i class="fa fa-calendar"></i>06.04.2022 - 21:00:00</p>
+                                <p><i class="fa fa-hourglass-start"></i>6h 52m 32s</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Environment info end-->
+                <!-- Test results -->
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card total-tests pull-up">
+                            <div class="inner-text">
+                                <h3>2064</h3>
+                                <p>Total Tests</p>
+                            </div>
+                            <div class="icon-holder">
+                                <i class="fa fa-flask-vial"></i>
+                            </div>
+                            <a href="#" class="card-footer-info">
+                                <div class="percentage-rate">
+                                    <span data-toggle="tooltip" data-placement="top" title="Total Run Time">6h 25m 23s</span>
+                                </div>
+                                More info
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card passed-tests pull-up">
+                            
+                            <div class="inner-text">
+                                <h3>1848</h3>
+                                <p>Passed</p>
+                            </div>
+                            <div class="icon-holder">
+                                <i class="fa fa-circle-check"></i>
+                            </div>
+                            <a href="#" class="card-footer-info">
+                                <div class="percentage-rate">
+                                    <span data-toggle="tooltip" data-placement="top" title="Percentage Rate">93%</span>
+                                </div>
+                                More info
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card failed-tests pull-up">
+                            <div class="inner-text">
+                                <h3>225</h3>
+                                <p>Failed</p>
+                            </div>
+                            <div class="icon-holder">
+                                <i class="fa fa-circle-xmark"></i>
+                            </div>
+                            <a href="#" class="card-footer-info">
+                                <div class="percentage-rate">
+                                    <span data-toggle="tooltip" data-placement="top" title="Percentage Rate">7%</span>
+                                </div>
+                                More info
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card skipped-tests pull-up">
+                            <div class="inner-text">
+                                <h3>5</h3>
+                                <p>Skipped</p>
+                            </div>
+                            <div class="icon-holder">
+                                <i class="fa fa-circle-xmark"></i>
+                            </div>
+                            <a href="#" class="card-footer-info">
+                                <div class="percentage-rate">
+                                    <span data-toggle="tooltip" data-placement="top" title="Percentage Rate">7%</span>
+                                </div>
+                                More info
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Test results end -->
+            </div>
+            <div class="row test-view">
+                <div class="main-title">Tests</div>
+                <div class="suite-wrapper">
+                    <div class="suite-info">
+                        <span>Test Suites</span>
+                    </div>
+                    <ul class="suite-list">
+                        <li class="suite-item" status="fail" test-id="1">
+                            <div class="suite-item-info">
+                                <div class="status-avatar fail-bg">
+                                    <i class="fa fa-times"></i>
+                                </div>
+                                <p class="name">Credit Card Products</p>
+                                <p class="duration">2h 7m 32s</p>
+                                <span class="time">21:09:52 PM</span>
+                            </div>
+                            <div class="suite-contents d-none">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="card level-0 failed-bg">
+                                                <div class="card-header">
+                                                    Credit Card Payment Distribution Tests
+                                                </div>
+                                                <div class="card-body">
+                                                    Passed: 23 Failed: 15
+                                                </div>
+                                                <div class="card-footer">
+                                                    Runtime: 1h 3m 2s
+                                                </div>
+                                                <div class="collapse">
+                                                    <div class="accordion">
+                                                        <div class="card level-1 failed-bg">
+                                                            <div class="card-header" role="tab">
+                                                                <h5 class="card-title">
+                                                                    <div class="node">
+                                                                        <div class="node-text">When mdp is reversed in
+                                                                            maturity date then the rounding is correct
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="status-avatar float-right pass-bg">
+                                                                        <i class="fa fa-check text-white"></i>
+                                                                    </div>
+                                                                </h5>
+                                                            </div>
+                                                            <div class="collapse">
+                                                                <div class="card-body">
+                                                                    <div class="description">
+                                                                        <p>User Story: <a
+                                                                                href="http://ezio.smartitbg.int:8080/tfs/DefaultCollection/SmartIT/_workitems?id=51195&amp;_a=edit"
+                                                                                target="_blank">51195: Rounding on a
+                                                                                daily basis </a></p>
+                                                                    </div>
+                                                                    <table class="table table-sm">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="status-col">Status</th>
+                                                                                <th class="timestamp-col">Timestamp</th>
+                                                                                <th class="details-col">Details</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr class="event-row">
+                                                                                <td><i
+                                                                                        class="fa fa-check text-pass"></i>
+                                                                                </td>
+                                                                                <td>21:13:16</td>
+                                                                                <td>
+                                                                                    Test ended with Pass </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="card level-0">
+                                                <div class="card-header" role="tab">
+                                                    <h5 class="card-title">
+                                                        <div class="node">
+                                                            <div class="node-text">Credit Card Rounding Tests</div>
+                                                        </div>
+                                                        <div class="status-avatar float-right pass-bg">
+                                                            <i class="fa fa-check text-white"></i>
+                                                        </div>
+                                                    </h5>
+                                                </div>
+                                                <div class="collapse">
+                                                    <div class="accordion">
+                                                        <div class="card level-1">
+                                                            <div class="card-header" role="tab">
+                                                                <h5 class="card-title">
+                                                                    <div class="node">
+                                                                        <div class="node-text">When mdp is reversed in
+                                                                            maturity date then the rounding is correct
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="status-avatar float-right pass-bg">
+                                                                        <i class="fa fa-check text-white"></i>
+                                                                    </div>
+                                                                </h5>
+                                                            </div>
+                                                            <div class="collapse">
+                                                                <div class="card-body">
+                                                                    <div class="description">
+                                                                        <p>User Story: <a
+                                                                                href="http://ezio.smartitbg.int:8080/tfs/DefaultCollection/SmartIT/_workitems?id=51195&amp;_a=edit"
+                                                                                target="_blank">51195: Rounding on a
+                                                                                daily basis </a></p>
+                                                                    </div>
+                                                                    <table class="table table-sm">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="status-col">Status</th>
+                                                                                <th class="timestamp-col">Timestamp</th>
+                                                                                <th class="details-col">Details</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr class="event-row">
+                                                                                <td><i
+                                                                                        class="fa fa-check text-pass"></i>
+                                                                                </td>
+                                                                                <td>21:13:16</td>
+                                                                                <td>
+                                                                                    Test ended with Pass </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card level-1">
+                                                            <div class="card-header" role="tab">
+                                                                <h5 class="card-title">
+                                                                    <div class="node">
+                                                                        <div class="node-text">When mdp is reversed in
+                                                                            maturity date then the rounding is correct
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="status-avatar float-right pass-bg">
+                                                                        <i class="fa fa-check text-white"></i>
+                                                                    </div>
+                                                                </h5>
+                                                            </div>
+                                                            <div class="collapse">
+                                                                <div class="card-body">
+                                                                    <div class="description">
+                                                                        <p>User Story: <a
+                                                                                href="http://ezio.smartitbg.int:8080/tfs/DefaultCollection/SmartIT/_workitems?id=51195&amp;_a=edit"
+                                                                                target="_blank">51195: Rounding on a
+                                                                                daily basis </a></p>
+                                                                    </div>
+                                                                    <table class="table table-sm">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="status-col">Status</th>
+                                                                                <th class="timestamp-col">Timestamp</th>
+                                                                                <th class="details-col">Details</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr class="event-row">
+                                                                                <td><i
+                                                                                        class="fa fa-check text-pass"></i>
+                                                                                </td>
+                                                                                <td>21:13:16</td>
+                                                                                <td>
+                                                                                    Test ended with Pass </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="card level-0">
+                                                <div class="card-header" role="tab">
+                                                    <h5 class="card-title">
+                                                        <div class="node">
+                                                            <div class="node-text">Payment Statuses Test</div>
+                                                        </div>
+                                                        <div class="status-avatar float-right pass-bg">
+                                                            <i class="fa fa-check text-white"></i>
+                                                        </div>
+                                                    </h5>
+                                                </div>
+                                                <div class="collapse">
+                                                    <div class="accordion">
+                                                        <div class="card level-1">
+                                                            <div class="card-header" role="tab">
+                                                                <h5 class="card-title">
+                                                                    <div class="node">
+                                                                        <div class="node-text">When mdp is reversed in
+                                                                            maturity date then the rounding is correct
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="status-avatar float-right pass-bg">
+                                                                        <i class="fa fa-check text-white"></i>
+                                                                    </div>
+                                                                </h5>
+                                                            </div>
+                                                            <div class="collapse">
+                                                                <div class="card-body">
+                                                                    <div class="description">
+                                                                        <p>User Story: <a
+                                                                                href="http://ezio.smartitbg.int:8080/tfs/DefaultCollection/SmartIT/_workitems?id=51195&amp;_a=edit"
+                                                                                target="_blank">51195: Rounding on a
+                                                                                daily basis </a></p>
+                                                                    </div>
+                                                                    <table class="table table-sm">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="status-col">Status</th>
+                                                                                <th class="timestamp-col">Timestamp</th>
+                                                                                <th class="details-col">Details</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr class="event-row">
+                                                                                <td><i
+                                                                                        class="fa fa-check text-pass"></i>
+                                                                                </td>
+                                                                                <td>21:13:16</td>
+                                                                                <td>
+                                                                                    Test ended with Pass </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="card level-0">
+                                                <div class="card-header" role="tab">
+                                                    <h5 class="card-title">
+                                                        <div class="node">
+                                                            <div class="node-text">Payment Reversal Tests</div>
+                                                        </div>
+                                                        <div class="status-avatar float-right pass-bg">
+                                                            <i class="fa fa-check text-white"></i>
+                                                        </div>
+                                                    </h5>
+                                                </div>
+                                                <div class="collapse">
+                                                    <div class="accordion">
+                                                        <div class="card level-1">
+                                                            <div class="card-header" role="tab">
+                                                                <h5 class="card-title">
+                                                                    <div class="node">
+                                                                        <div class="node-text">When mdp is reversed in
+                                                                            maturity date then the rounding is correct
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="status-avatar float-right pass-bg">
+                                                                        <i class="fa fa-check text-white"></i>
+                                                                    </div>
+                                                                </h5>
+                                                            </div>
+                                                            <div class="collapse">
+                                                                <div class="card-body">
+                                                                    <div class="description">
+                                                                        <p>User Story: <a
+                                                                                href="http://ezio.smartitbg.int:8080/tfs/DefaultCollection/SmartIT/_workitems?id=51195&amp;_a=edit"
+                                                                                target="_blank">51195: Rounding on a
+                                                                                daily basis </a></p>
+                                                                    </div>
+                                                                    <table class="table table-sm">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="status-col">Status</th>
+                                                                                <th class="timestamp-col">Timestamp</th>
+                                                                                <th class="details-col">Details</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr class="event-row">
+                                                                                <td><i
+                                                                                        class="fa fa-check text-pass"></i>
+                                                                                </td>
+                                                                                <td>21:13:16</td>
+                                                                                <td>
+                                                                                    Test ended with Pass </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="card level-0">
+                                                <div class="card-header" role="tab">
+                                                    <h5 class="card-title">
+                                                        <div class="node">
+                                                            <div class="node-text">Recalculation Tests</div>
+                                                        </div>
+                                                        <div class="status-avatar float-right pass-bg">
+                                                            <i class="fa fa-check text-white"></i>
+                                                        </div>
+                                                    </h5>
+                                                </div>
+                                                <div class="collapse">
+                                                    <div class="accordion">
+                                                        <div class="card level-1">
+                                                            <div class="card-header" role="tab">
+                                                                <h5 class="card-title">
+                                                                    <div class="node">
+                                                                        <div class="node-text">When mdp is reversed in
+                                                                            maturity date then the rounding is correct
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="status-avatar float-right pass-bg">
+                                                                        <i class="fa fa-check text-white"></i>
+                                                                    </div>
+                                                                </h5>
+                                                            </div>
+                                                            <div class="collapse">
+                                                                <div class="card-body">
+                                                                    <div class="description">
+                                                                        <p>User Story: <a
+                                                                                href="http://ezio.smartitbg.int:8080/tfs/DefaultCollection/SmartIT/_workitems?id=51195&amp;_a=edit"
+                                                                                target="_blank">51195: Rounding on a
+                                                                                daily basis </a></p>
+                                                                    </div>
+                                                                    <table class="table table-sm">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="status-col">Status</th>
+                                                                                <th class="timestamp-col">Timestamp</th>
+                                                                                <th class="details-col">Details</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr class="event-row">
+                                                                                <td><i
+                                                                                        class="fa fa-check text-pass"></i>
+                                                                                </td>
+                                                                                <td>21:13:16</td>
+                                                                                <td>
+                                                                                    Test ended with Pass </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="card level-0">
+                                                <div class="card-header" role="tab">
+                                                    <h5 class="card-title">
+                                                        <div class="node">
+                                                            <div class="node-text">Blocking Card Tests</div>
+                                                        </div>
+                                                        <div class="status-avatar float-right pass-bg">
+                                                            <i class="fa fa-check text-white"></i>
+                                                        </div>
+                                                    </h5>
+                                                </div>
+                                                <div class="collapse">
+                                                    <div class="accordion">
+                                                        <div class="card level-1">
+                                                            <div class="card-header" role="tab">
+                                                                <h5 class="card-title">
+                                                                    <div class="node">
+                                                                        <div class="node-text">When mdp is reversed in
+                                                                            maturity date then the rounding is correct
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="status-avatar float-right pass-bg">
+                                                                        <i class="fa fa-check text-white"></i>
+                                                                    </div>
+                                                                </h5>
+                                                            </div>
+                                                            <div class="collapse">
+                                                                <div class="card-body">
+                                                                    <div class="description">
+                                                                        <p>User Story: <a
+                                                                                href="http://ezio.smartitbg.int:8080/tfs/DefaultCollection/SmartIT/_workitems?id=51195&amp;_a=edit"
+                                                                                target="_blank">51195: Rounding on a
+                                                                                daily basis </a></p>
+                                                                    </div>
+                                                                    <table class="table table-sm">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="status-col">Status</th>
+                                                                                <th class="timestamp-col">Timestamp</th>
+                                                                                <th class="details-col">Details</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr class="event-row">
+                                                                                <td><i
+                                                                                        class="fa fa-check text-pass"></i>
+                                                                                </td>
+                                                                                <td>21:13:16</td>
+                                                                                <td>
+                                                                                    Test ended with Pass </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="suite-item" status="pass" test-id="439">
+                            <div class="suite-item-info">
+                                <div class="status-avatar pass-bg">
+                                    <i class="fa fa-check"></i>
+                                </div>
+                                <p class="name">Credit Line Products</p>
+                                <p class="duration text-sm">1h 15m 1s</p>
+                                <span class="time">22:12:52 PM</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="test-wrapper">
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Main Content End -->
+</body>
+<script src="https://kit.fontawesome.com/40508e587a.js" crossorigin="anonymous"></script>
+<script>
+    var options = {
+    chart: {
+        height: '100',
+        toolbar:{
+            show: false
+        },
+        type: 'area'
+    },
+    series: [{
+        name: 'sales',
+        data: [0,40,45,50,49,60,70,91,125,0,40,45,50,49,60,70,91,125]
+    }],
+    grid: {
+        show: false
+    },
+    tooltip: {
+        theme: 'dark'
+    },
+    colors: ['#007bff'],
+    yaxis: {
+        labels: {
+            show: false
+        }
+    },
+    xaxis: {
+        axisBorder: {
+            show: false
+            },
+        axisTicks: {
+            show: false
+        },
+        labels: {
+            show: false,
+            axisTicks: {
+                show: false
+            }
+        },
+        categories: [1991,1992,1993,1994,1995,1996,1997, 1998,1999,2000,2002,2003,2004,2005,2006,2007, 2008,2009]
+    },
+    dataLabels: {
+        enabled: false
+    },
+    fill:{
+        type: "gradient",
+        gradient: {
+        garadientToColors: ['#FDD835'],
+        colorStops: [
+            {
+                offset: 60,
+                color: '#007bff',
+                opacity: 0.1
+            },
+            {
+                offset: 100,
+                color: '#171f29',
+                opacity: 0.05
+            }
+        ],
+        shadeIntensity: 1,
+        opacityFrom: 0.7,
+        opacityTo: 0.9,
+        stops: [0, 90, 100]
+    }
+    }
+}
+
+var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+chart.render();
+
+var options = {
+    chart: {
+        height: '100',
+        toolbar:{
+            show: false
+        },
+        type: 'area'
+    },
+    series: [{
+        name: 'sales',
+        data: [0,12,58,41,66,34,56,111,32]
+    }],
+    grid: {
+        show: false
+    },
+    colors: ['#28a745'],
+    yaxis: {
+        labels: {
+            show: false
+        }
+    },
+    xaxis: {
+        axisBorder: {
+            show: false
+            },
+        axisTicks: {
+            show: false
+        },
+        labels: {
+            show: false,
+            axisTicks: {
+                show: false
+            }
+        },
+        categories: [1991,1992,1993,1994,1995,1996,1997, 1998,1999]
+    },
+    dataLabels: {
+        enabled: false
+    },
+    fill:{
+        type: "gradient",
+        gradient: {
+        garadientToColors: ['#FDD835'],
+        colorStops: [
+            {
+                offset: 60,
+                color: '#28a745',
+                opacity: 0.1
+            },
+            {
+                offset: 100,
+                color: '#171f29',
+                opacity: 0.05
+            }
+        ],
+        shadeIntensity: 1,
+        opacityFrom: 0.7,
+        opacityTo: 0.9,
+        stops: [0, 90, 100]
+    }
+    }
+}
+
+var chart = new ApexCharts(document.querySelector("#chart2"), options);
+
+chart.render();
+
+var options = {
+    chart: {
+        height: '100',
+        toolbar:{
+            show: false
+        },
+        type: 'area'
+    },
+    series: [{
+        name: 'sales',
+        data: [0,10,95,10,114,56,90,151,31]
+    }],
+    grid: {
+        show: false
+    },
+    colors: ['#e51e37'],
+    yaxis: {
+        labels: {
+            show: false
+        }
+    },
+    xaxis: {
+        axisBorder: {
+            show: false
+            },
+        axisTicks: {
+            show: false
+        },
+        labels: {
+            show: false,
+            axisTicks: {
+                show: false
+            }
+        },
+        categories: [1991,1992,1993,1994,1995,1996,1997, 1998,1999]
+    },
+    dataLabels: {
+        enabled: false
+    },
+    fill:{
+        type: "gradient",
+        gradient: {
+        garadientToColors: ['#FDD835'],
+        colorStops: [
+            {
+                offset: 60,
+                color: '#e51e37',
+                opacity: 0.1
+            },
+            {
+                offset: 100,
+                color: '#171f29',
+                opacity: 0.05
+            }
+        ],
+        shadeIntensity: 1,
+        opacityFrom: 0.7,
+        opacityTo: 0.9,
+        stops: [0, 90, 100]
+    }
+    }
+}
+
+var chart = new ApexCharts(document.querySelector("#chart3"), options);
+
+chart.render();
+</script>
+</html>

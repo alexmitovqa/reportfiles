@@ -1,0 +1,89 @@
+/* Dashboard Start */
+.dashboard-view .card{
+    width: 100%;
+    background-color: #171f29;
+    border-radius: 20px;
+}
+
+.dashboard-view .test-environment .card-body i{
+    margin-right: 10px;
+}
+
+.dashboard-view .card .percentage-rate{
+    position: absolute;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.dashboard-view .card .inner-text{
+    transition: all 0.5s linear;
+    padding: 1.25rem;
+}
+
+.dashboard-view .card .inner-text p{
+    font-size: 13px;
+}
+
+.dashboard-view .card .icon-holder{
+    position: absolute;
+    top: 15px;
+    bottom: 15px;
+    right: 30px;
+    font-size: 55px;
+    transition: all 0.5s linear;
+}
+
+.dashboard-view .card:hover .icon-holder{
+    font-size: 60px;
+}
+
+.dashboard-view .card .card-footer-info{
+    position: relative;
+    text-align: right;
+    padding: 3px 10px;
+    color: #fff;
+    color: rgba(255, 255, 255, .8);
+    display: block;
+    z-index: 10;
+    background: rgba(0, 0, 0, .1);
+    text-decoration: none;
+    font-size: 13px;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.dashboard-view .card .card-footer-info i{
+    margin-left: 3px;
+    margin-right: 2px;
+}
+
+.dashboard-view .card .card-footer-info:hover{
+    background: rgba(0, 0, 0, .15);
+}
+
+.dashboard-view .card.total-tests{
+    background-color: #2d82f8c0;
+}
+.dashboard-view .card.passed-tests{
+    
+    background-color: #28a746c7;
+}
+
+.dashboard-view .card.failed-tests{
+    background-color: #e51e39bd;
+}
+
+.dashboard-view .card.skipped-tests{
+    background-color: #f1bc0dee;
+}
+
+@media only screen and (max-width: 816px){
+    .dashboard-view .card .icon-holder{
+        font-size: 20px;
+    }
+
+    .dashboard-view .card .percentage-rate{
+        font-size: 10px;
+    }
+}
+
+/* Dashboard End */

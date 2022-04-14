@@ -1,0 +1,95 @@
+@import "mixins";
+
+/* Sidebar Start */
+.sidebar{
+    position: fixed;
+    background-color: #0d1117;
+    left: 0;
+    width: 170px;
+    height: 100%;
+}
+
+.side-nav-logo{
+    position: relative;
+    top: 40px;
+    left: 10px;
+    margin-bottom: 110px;
+}
+
+.side-nav-logo img{
+    vertical-align: baseline;
+    padding-right: 5px;
+    width: 37px;
+}
+
+.side-nav-logo span{
+    line-height: 2rem;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+span.smart{
+    color: #399ad5
+}
+
+span.it{
+    color: #1a4a80
+}
+
+.sidebar a{
+    color: #4f5b6e;
+    margin: 10px 5px 10px 0px;
+    padding: 12px 12px 12px 23px;
+    display: block;
+    text-decoration: none;
+    border-radius: 0px 13px 13px 0px;
+    transition: 0.5s;
+    transition-property: background;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.sidebar a.active{
+    color: #e0e0fd!important;
+    background-color: #4544ef!important;
+    @include white-box-shadow;
+}
+
+.sidebar a:hover{
+    color: #e0e0fd42;
+    background-color: #4444ef1c;
+}
+
+.sidebar ul{
+    position: relative;
+    background-color: #0d1117;
+    padding: 10px 0px 10px 0px;
+}
+
+.sidebar ul .before {
+    content: "";
+    position: absolute;
+    background-color: #0d1117;
+    bottom: 78px;
+    right: 0px;
+    height: 10px;
+    width: 100%;
+    border-bottom-right-radius: 18px;
+}
+  
+.sidebar ul .after {
+    content: "";
+    position: absolute;
+    background-color: #0d1117;
+    top: 79px;
+    right: 0px;
+    height: 9px;
+    width: 100%;
+    border-top-right-radius: 18px;
+}
+
+.sidebar i{
+    font-size: 19px;
+    padding-right: 17px;
+}
+/* Sidebar End */

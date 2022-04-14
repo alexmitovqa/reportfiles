@@ -1,0 +1,46 @@
+@import "colors";
+
+.test-wrapper .node-text{
+    font-size: 13px;
+}
+
+.test-wrapper .card{
+    background-color: #196f2c;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.test-wrapper .card.level-0:hover, .test-wrapper .card.level-1:hover{
+    cursor: pointer
+}
+
+.col-3.expanded-col{
+    width: 95%;
+}
+
+.test-wrapper .card{
+    border: none;
+}
+
+.card.passed-bg{
+    background-color: $passed-bg;
+}
+
+.card.failed-bg {
+    background-color: $failed-bg;
+}
+
+.card.level-0 .collapse, .card.level-0 .collapsing{
+    background-color: $card-default-bg;
+}
+
+.card.level-1{
+    margin-left: 20px;
+}
+.card.level-1 .card-body:hover{
+    cursor: default;
+}
+
+.card.level-1 .card-body:hover{
+    cursor: default;
+}
